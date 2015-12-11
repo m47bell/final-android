@@ -27,6 +27,7 @@ public class EmailDetailFragment extends Fragment {
 
     // TODO - get references to views
 
+    
     // TODO - replace nulls
     Picasso.with(getActivity()).load((String) null).into((ImageView) null);
 

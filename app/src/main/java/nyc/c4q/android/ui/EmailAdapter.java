@@ -71,6 +71,8 @@ public class EmailAdapter extends BaseAdapter {
     // TODO - set up other views
     // for body, only use MAX_BODY_LENGTH chars followed by "..."
 
+
+
     return view;
   }
 

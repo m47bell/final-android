@@ -58,6 +58,8 @@ public class FakeEmailService implements EmailService {
   public boolean hasNewMail() {
     // TODO - 30% of the time you should generate a new email
     // hint: this class has a member variable that generates random numbers
+
+
     return false;
   }
 
@@ -65,8 +67,9 @@ public class FakeEmailService implements EmailService {
     // TODO - return a new email
     // hint: use RANDOM_PIC above
 
+    int index = random.nextInt(emails.size());
 
-    return null;
+      return emails.get(index);
   }
 
   // utility method
