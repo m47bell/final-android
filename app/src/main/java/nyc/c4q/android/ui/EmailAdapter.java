@@ -6,8 +6,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.TextView;
+
 import com.squareup.picasso.Picasso;
+
 import java.util.List;
+
 import nyc.c4q.android.R;
 import nyc.c4q.android.model.Email;
 
@@ -37,13 +41,24 @@ public class EmailAdapter extends BaseAdapter {
   }
 
   @Override public View getView(int position, View view, ViewGroup parent) {
+
+    ViewHolder holder = null;
     if (view == null) {
       // TODO - load R.layout.list_email_row
-    }
+      view =  inflater.from(context).inflate(R.layout.list_email_row,parent,false);
 
+    }
     // TODO - setup views
+      holder.emailBody = (TextView) view.findViewById(R.id.email_body);
+      holder.emailSubject = (TextView) view.findViewById(R.id.email_subject);
+      holder.emailImg = (ImageView) view.findViewById(R.id.email_from_img);
 
     // TODO - get the email defined at 'position'
+
+     Email email = getItem(position);
+
+    holder.emailBody.setText(email.getBody());
+    holder.emailSubject.setText(email.getSubject());
 
     // TODO - replace nulls
     Picasso.with(context)
@@ -58,4 +73,12 @@ public class EmailAdapter extends BaseAdapter {
 
     return view;
   }
+
+  static class ViewHolder{
+    ImageView emailImg;
+    TextView emailSubject;
+    TextView emailBody;
+
+  }
+
 }
